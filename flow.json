@@ -5,7 +5,11 @@
 			"serviceAccount": "testnet-account"
 		}
 	},
-	"contracts": {},
+	"contracts": {
+		"NonFungibleToken": "./src/cadence/contracts/NonFungibleToken.cdc",
+		"CarlyToken": "./src/cadence/contracts/CarlyToken.cdc",
+		"FungibleToken": "./src/cadence/contracts/FungibleToken.cdc"
+	  },
 	"networks": {
 		"emulator": "127.0.0.1:3569",
 		"mainnet": "access.mainnet.nodes.onflow.org:9000",
@@ -21,5 +25,9 @@
 			"key": "9d09946836630bcdc6c9f609540cfd1d0665772052a8cfa9bd47c45733e5069f"
 		}
 	},
-	"deployments": {}
+	"deployments": {
+		"testnet": {
+		  "testnet-account": ["FungibleToken","CarlyToken", "NonFungibleToken"]
+		}
+	  }
 }
